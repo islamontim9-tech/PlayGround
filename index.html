@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="theme-color" content="#10131c" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%23d8f36a%22/><text x=%226%22 y=%2224%22 font-size=%2223%22>✦</text></svg>" />
+  <title>Fruit Frenzy — Slice into the night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fruit Frenzy home"><span class="brand-mark">✦</span><span>fruit<span class="brand-light">frenzy</span></span></a>
+      <div class="top-right"><span class="edition">ARCADE EDITION</span><button class="sound-toggle" id="soundToggle" aria-label="Toggle sound" title="Toggle sound"><span id="soundIcon">♫</span></button></div>
+    </header>
+
+    <section class="game-layout" aria-label="Fruit Frenzy game">
+      <div class="game-column">
+        <div class="game-topline"><div><span class="eyebrow">THE ORIGINAL SLICING SENSATION</span><h1>Slice into<br class="mobile-break"> the <em>night.</em></h1></div><div class="round-pill"><span class="live-dot"></span> CLASSIC MODE</div></div>
+        <div class="game-frame" id="gameFrame">
+          <canvas id="gameCanvas" aria-label="Fruit Frenzy gameplay area"></canvas>
+          <div class="hud" id="hud" aria-hidden="true">
+            <div class="hud-stat"><span class="hud-label">SCORE</span><strong id="scoreDisplay">000</strong></div>
+            <div class="hud-center"><span class="hud-label">TIME</span><strong id="timeDisplay">60</strong></div>
+            <div class="hud-stat hud-right"><span class="hud-label">BEST</span><strong id="bestDisplay">000</strong></div>
+            <div class="lives" id="livesDisplay"><i></i><i></i><i></i></div>
+            <button class="pause-button" id="pauseButton" aria-label="Pause game">Ⅱ</button>
+          </div>
+          <div class="overlay" id="startOverlay">
+            <div class="overlay-content start-content">
+              <div class="fruit-stamp">🍊</div>
+              <div class="eyebrow">READY, SET, SLICE</div>
+              <h2>Make it<br><span>juicy.</span></h2>
+              <p>Swipe through the fruit.<br>Whatever you do, dodge the bombs.</p>
+              <button class="primary-button" id="startButton">PLAY NOW <span>↗</span></button>
+              <div class="micro-hint"><span class="mouse-icon">⌁</span> DRAG TO SLICE</div>
+            </div>
+            <div class="overlay-fruit fruit-a">🍋</div><div class="overlay-fruit fruit-b">🍓</div><div class="overlay-fruit fruit-c">🍉</div>
+          </div>
+          <div class="overlay hidden" id="pauseOverlay"><div class="overlay-content"><div class="eyebrow">TAKE A BREATHER</div><h2>Game<br><span>paused.</span></h2><p>Your fruit isn't going anywhere.</p><button class="primary-button" id="resumeButton">KEEP PLAYING <span>↗</span></button><button class="text-button" id="quitButton">END THIS RUN</button></div></div>
+          <div class="overlay hidden" id="endOverlay"><div class="overlay-content"><div class="eyebrow" id="endEyebrow">NICE SLICING</div><h2 id="endTitle">That's<br><span>the juice.</span></h2><div class="final-score"><span>YOUR SCORE</span><strong id="finalScore">000</strong></div><p id="endMessage">A juicy run. Ready for another?</p><button class="primary-button" id="againButton">PLAY AGAIN <span>↗</span></button></div></div>
+          <div class="toast" id="toast">NICE SLICE!</div>
+        </div>
+        <div class="game-footer"><span><i class="footer-dot"></i> <b>60 SECONDS</b> TO MAKE YOUR MARK</span><span class="slash">✦</span><span>AVOID THE BOMBS <b>— NO SECOND CHANCES</b></span></div>
+      </div>
+      <aside class="side-column">
+        <div class="side-card best-card"><div class="card-head"><span class="eyebrow">YOUR PERSONAL BEST</span><span class="trophy">✦</span></div><div class="best-number" id="sideBest">000</div><div class="best-caption">SCORE TO BEAT <span>↗</span></div><div class="mini-chart"><div class="chart-line"></div><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+        <div class="side-card how-card"><div class="card-head"><span class="eyebrow">THE LOWDOWN</span><span class="sparkle">✳</span></div><div class="how-row"><div class="how-icon slice-icon">╱</div><div><strong>Swipe to slice</strong><p>Drag across the screen<br>to cut through the fruit.</p></div></div><div class="how-row"><div class="how-icon bomb-icon">✳</div><div><strong>Watch for bombs</strong><p>One wrong slice and<br>your run is over.</p></div></div><div class="how-row"><div class="how-icon combo-icon">3×</div><div><strong>Chase the combo</strong><p>Slice several fruit at once<br>for a juicy score boost.</p></div></div></div>
+        <div class="tip-card"><span>✦</span><p><b>PRO TIP</b><br>Long swipes are your friend.<br>Go for the big combos.</p></div>
+      </aside>
+    </section>
+    <footer class="site-footer"><span>© FRUIT FRENZY ARCADE</span><span>MADE FOR THE LOVE OF THE SLICE <b>✦</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
